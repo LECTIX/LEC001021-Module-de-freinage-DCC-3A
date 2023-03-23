@@ -11,6 +11,41 @@ Arrêtez et redémarrez vos convois de manière automatique et réaliste avec de
 ## Utiliser les fichiers sources pour fabriquer le produit
 
 Il n'est **pas nécessaire de savoir souder ou d'être bon en électronique** pour se procurer ce produit. Grâce aux fichiers sources publiés ici, vous pouvez être en mesure de faire fabriquer ce produit par un sous traitant.
+
+### Faire fabriquer chez un sous traitant
+
+Il est aujourd'hui possible de faire fabriquer à moindre cout des cartes électroniques. Nous recommendons [JLCPCB](https://jlcpcb.com/) si vous voulez aller au moins cher. Si vous préférez un acteur européen, [eurocircuits](https://www.eurocircuits.com/) est un des acteurs reconnus.
+
+1. Télécherger les sources de ce produit en cliquant sur le bouton `Code`, puis `Download ZIP`.
+1. Décompresser le dossier.
+1. Les fichiers pour la fabrication se trouvent dans le répertoire `hardware/prod`.
+1. Se connecter sur [https://cart.jlcpcb.com/quote](https://cart.jlcpcb.com/quote)
+1. Cliquer sur le bouton `Add gerber file` et sélectionner le fichier `gerbers.zip`.
+1. Sélectionnez la quantité de cartes que vous souhaitez dans le champs `PCB Qty`.
+1. Laisser toutes les autres options par défaut, puis cliquez sur le toggle switch en face de `PCB Assembly`, et enfin sur le bouton `confirm`.
+1. Une preview de la carte électronique sans les composants doit apparaitre. Cliquez sur `NEXT`.
+1. Cliquez sur le bouton `Add BOM File`, puis sélectionnez le fichier `bom.csv`
+1. Cliquez sur le bouton `Add CPL File`, puis sélectionnez le fichier `pos.csv`
+1. **Vérifier que tous les composants sont en stock** et bien sélectionnés, puis cliquez sur `NEXT`.
+1. Une preview de la carte avec ses composants apparait. Continuer le chemin en cliquant sur `NEXT`.
+1. Le prix final apparait. Sélectionnez la catégorie du produit, puis cliquez sur `SAVE TO CART`.
+1. Une fois sauvegardé dans votre panier, vous pouvez valider votre commande et choisir le moyen d'acheminement. Afin de ne pas avoir à se préoccuper des frais de douane, nous vous conseillons de choisir une méthode d'expédition DDP.
+
+Vous receverez vos cartes sous 1 à 3 semaines. 
+**Nous ne sommes en aucun cas responsables des cartes qui arriveraient défectueuses ou non fonctionnelles.**
+
+
+
+### Regénérer les fichiers gerber, BOM, et position (Optionnel)
+
+Peut se faire simplement en utilisant kikit :
+
+```
+cd hardware
+
+docker run --rm -w /kikit -v $PWD:/kikit yaqwsx/kikit kikit fab jlcpcb --assembly --no-drc --schematic LEC001021.kicad_sch --field LCSC --corrections JLCPCB_CORRECTION LEC001021.kicad_pcb prod/LEC001021-$(date '+%Y-%m-%d')
+
+```
 ## Notices
 [Manuel FR](docs/manual_fr.pdf)
 

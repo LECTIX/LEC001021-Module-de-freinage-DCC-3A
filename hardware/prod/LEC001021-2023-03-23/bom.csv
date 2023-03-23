@@ -1,0 +1,5 @@
+Comment,Designator,Footprint,LCSC
+RS3M,"D1,D2,D4,D5",Diode_SMD:D_SMC,C330389
+SS34C,D3,Diode_SMD:D_SMC,C13763
+Screw_Terminal_01x02_blue,J1,0_connectors:TerminalBlock_bornier-2_P5.08mm-blue,C395882
+logo_lectix_25mm,LOGO1,0_logos:Logo_10mm,
