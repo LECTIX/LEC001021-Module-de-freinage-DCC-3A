@@ -32,9 +32,12 @@ Il est aujourd'hui possible de faire fabriquer à moindre cout des cartes élect
 1. Une fois sauvegardé dans votre panier, vous pouvez valider votre commande et choisir le moyen d'acheminement. Afin de ne pas avoir à se préoccuper des frais de douane, nous vous conseillons de choisir une méthode d'expédition DDP.
 
 Vous receverez vos cartes sous 1 à 3 semaines. 
+
 **Nous ne sommes en aucun cas responsables des cartes qui arriveraient défectueuses ou non fonctionnelles.**
 
+### Modifications des fichiers sources
 
+Installez kicad 6 (ou version supérieure), et ouvrez le fichier LEC001021.kicad_pro
 
 ### Regénérer les fichiers gerber, BOM, et position (Optionnel)
 
