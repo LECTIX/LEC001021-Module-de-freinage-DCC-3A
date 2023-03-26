@@ -46,7 +46,7 @@ Peut se faire simplement en utilisant kikit :
 ```
 cd hardware
 
-docker run --rm -w /kikit -v $PWD:/kikit yaqwsx/kikit kikit fab jlcpcb --assembly --no-drc --schematic LEC001021.kicad_sch --field LCSC --corrections JLCPCB_CORRECTION LEC001021.kicad_pcb prod/LEC001021-$(date '+%Y-%m-%d')
+docker run --rm -w /kikit -v $PWD:/kikit yaqwsx/kikit kikit fab jlcpcb --assembly --no-drc --schematic LEC001021.kicad_sch --field LCSC --corrections JLCPCB_CORRECTION --nametemplate LEC001021_{} LEC001021.kicad_pcb prod/
 
 ```
 ## Notices
